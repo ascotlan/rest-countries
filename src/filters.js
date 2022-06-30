@@ -1,11 +1,11 @@
 const filters = {
-  searchText = '',
-  sortBy = ''
+  searchText: '',
+  sortBy: ''
 }
 
-getFilters = () => filters
+const getFilters = () => filters
 
-setFilters = (updates) => {
+const setFilters = (updates) => {
   if(typeof updates.searchText === 'string'){
     filters.searchText = updates.searchText
   }
