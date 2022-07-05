@@ -12,5 +12,5 @@ backBtnEl.addEventListener("click", (e) => {
 });
 
 borderBtnEl.addEventListener("click", (e) => {
-  console.log(e); ///problem to solve
+  ///problem to solve
 });
