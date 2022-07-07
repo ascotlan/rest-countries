@@ -2,15 +2,22 @@ import { initializeDetailPage } from "./views.js";
 
 //grab recipe id from url
 const countryId = location.hash.substring(1);
-initializeDetailPage(countryId); //render edit page
+const classList = initializeDetailPage(countryId); //render edit page
 
 const backBtnEl = document.querySelector(".back");
-const borderBtnEl = document.querySelector(".border-country");
 
-backBtnEl.addEventListener("click", (e) => {
-  location.assign("/index.html");
+classList.forEach((a) => {
+  document.querySelector(`.${a}`).addEventListener("click", (e) => {
+    const state = { id: e.target.name };
+    history.pushState(state, "", `/country.html#${e.target.name}`);
+    location.reload();
+  });
 });
 
-borderBtnEl.addEventListener("click", (e) => {
-  ///problem to solve
+backBtnEl.addEventListener("click", (e) => {
+  history.back();
+});
+
+window.addEventListener("popstate", (e) => {
+  location.reload();
 });

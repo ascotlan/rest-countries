@@ -25,7 +25,7 @@ const generateCountryDOM = (country) => {
   countryEl.appendChild(flagEl);
   countryTextEl.appendChild(nameEl);
 
-  popTextEl.textContent = country.population;
+  popTextEl.textContent = country.population.toLocaleString();
   popEl.appendChild(popTextEl);
   popEl.classList.add("long-text-truncate");
   countryTextEl.appendChild(popEl);
@@ -35,9 +35,7 @@ const generateCountryDOM = (country) => {
   regionEl.classList.add("long-text-truncate");
   countryTextEl.appendChild(regionEl);
 
-  capTextEl.textContent = country.capital
-    ? country.capital
-    : "No known capital city";
+  capTextEl.textContent = country.capital ? country.capital : "No capital";
   capitalEl.appendChild(capTextEl);
   capitalEl.classList.add("long-text-truncate");
   countryTextEl.appendChild(capitalEl);
@@ -101,18 +99,30 @@ const initializeDetailPage = (countryId) => {
     (country) => countryId === country.cca3
   );
 
+  if (!country) {
+    location.assign("/index.html");
+  }
+
   //setup dom and initilize country details page
   flagEl.setAttribute("src", country.flags.svg);
   nameEl.textContent = country.name.common;
+  nativeNameEl.classList.add("comma", "no-bold");
 
   for (const k in country.name.nativeName) {
     nativeNameEl.textContent = country.name.nativeName[k].common;
   }
-  popEl.textContent = country.population;
+  popEl.textContent = country.population.toLocaleString();
+  popEl.classList.add("no-bold");
   regionEl.textContent = country.region;
+  regionEl.classList.add("no-bold");
   subRegionEl.textContent = country.subregion;
+  subRegionEl.classList.add("no-bold");
   capitalEl.textContent = country.capital;
+  capitalEl.classList.add("no-bold");
   domainEl.textContent = country.tld;
+  domainEl.classList.add("no-bold");
+
+  currencyEl.classList.add("comma", "no-bold");
 
   for (const k in country.currencies) {
     currencyEl.textContent = country.currencies[k].name;
@@ -121,20 +131,37 @@ const initializeDetailPage = (countryId) => {
   for (const k in country.languages) {
     const langRowEl = document.createElement("span");
     langRowEl.textContent = country.languages[k];
+    langRowEl.classList.add("comma", "no-bold");
     langEl.appendChild(langRowEl);
   }
 
+  let classList = [];
+
   if (country.borders) {
-    country.borders.forEach((country) => {
+    country.borders.forEach((countryData) => {
       const buttonEl = document.createElement("button");
-      buttonEl.innerText = `${country}`;
-      buttonEl.name = `${country}`;
+
+      const bordering = getCountryData().filter((item) => {
+        return item.cca3 === countryData;
+      });
+
+      bordering.forEach((border) => {
+        buttonEl.innerText = border.name.common;
+      });
+
+      buttonEl.name = `${countryData}`;
       buttonEl.classList.add("border-country");
+      buttonEl.classList.add(`border-${countryData}`);
       borderEl.appendChild(buttonEl);
+
+      classList.push(`border-${countryData}`);
     });
   } else {
     borderEl.textContent = "None";
+    borderEl.classList.add("no-bold");
   }
+
+  return classList;
 };
 
 export { initializeDetailPage, renderCountries };
