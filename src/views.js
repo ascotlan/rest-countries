@@ -26,18 +26,21 @@ const generateCountryDOM = (country) => {
   countryTextEl.appendChild(nameEl);
 
   popTextEl.textContent = country.population.toLocaleString();
+  popTextEl.classList.add("no-bold");
   popEl.appendChild(popTextEl);
-  popEl.classList.add("long-text-truncate");
+  popEl.classList.add("long-text-truncate", "spacing");
   countryTextEl.appendChild(popEl);
 
   regionTextEl.textContent = country.region;
+  regionTextEl.classList.add("no-bold");
   regionEl.appendChild(regionTextEl);
-  regionEl.classList.add("long-text-truncate");
+  regionEl.classList.add("long-text-truncate", "spacing");
   countryTextEl.appendChild(regionEl);
 
   capTextEl.textContent = country.capital ? country.capital : "No capital";
+  capTextEl.classList.add("no-bold");
   capitalEl.appendChild(capTextEl);
-  capitalEl.classList.add("long-text-truncate");
+  capitalEl.classList.add("long-text-truncate", "spacing");
   countryTextEl.appendChild(capitalEl);
 
   countryTextEl.classList.add("country-text");
