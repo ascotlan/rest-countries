@@ -5,10 +5,10 @@
 }
 
 body {
-  background-color: hsl(0, 0%, 95%);
+  background-color: hsl(207, 26%, 17%);
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
-  color: hsl(200, 15%, 8%);
+  color: hsl(0, 0%, 100%);
 }
 
 p {
@@ -31,24 +31,24 @@ p {
 
 input::placeholder {
   font-weight: bold;
-  color: hsl(0, 0%, 52%);
+  color: hsl(0, 0%, 100%);
   opacity: 1;
 }
 
 input,
 select,
 textarea {
-  color: hsl(0, 0%, 52%);
+  color: hsl(0, 0%, 100%);
 }
 
 .country-search {
   width: 25%;
   height: 50px;
   border-radius: 4px;
-  border: hsl(0, 0%, 95%) solid 3px;
+  border: hsl(207, 26%, 17%) solid 3px;
   padding-left: 40px;
   font-weight: bold;
-  background: hsl(0, 0%, 100%)
+  background: hsl(209, 23%, 22%)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
     no-repeat 10px center;
 }
@@ -56,9 +56,9 @@ textarea {
 .country-filter {
   width: 13%;
   border-radius: 4px;
-  border: hsl(0, 0%, 95%) solid 3px;
+  border: hsl(207, 26%, 17%) solid 3px;
   padding-left: 20px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(209, 23%, 22%);
 }
 
 .country-info {
@@ -72,7 +72,7 @@ textarea {
 .country-info-card {
   display: flex;
   flex-direction: column;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(209, 23%, 22%);
   cursor: pointer;
 }
 
@@ -106,8 +106,8 @@ textarea {
   grid-column: 1 / -1;
   align-items: center;
   justify-content: space-between;
-  background-color: hsl(0, 0%, 100%);
-  border-bottom: hsl(0, 0%, 95%) solid 3px;
+  background-color: hsl(209, 23%, 22%);
+  border-bottom: hsl(207, 26%, 17%) solid 3px;
   padding: 10px 0;
 }
 
@@ -127,7 +127,8 @@ textarea {
   border: none;
   padding: 5px;
   cursor: pointer;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(209, 23%, 22%);
+  color: inherit;
 }
 
 /* COUNTRY DETAILS PAGE */
@@ -144,9 +145,10 @@ textarea {
   margin-left: 60px;
   padding: 7px 20px;
   border-radius: 4px;
-  border: 2px groove hsl(0, 0%, 95%);
+  border: 2px groove hsl(207, 26%, 17%);
   cursor: pointer;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
 }
 
 .country-info-details {
@@ -221,9 +223,10 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  border: 2px groove hsl(0, 0%, 95%);
+  border: 2px groove hsl(207, 26%, 17%);
   cursor: pointer;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
 }
 
 .comma:not(:first-child):before {
