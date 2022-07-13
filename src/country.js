@@ -1,5 +1,9 @@
 import { initializeDetailPage } from "./views.js";
 
+const btn = document.querySelector(".dark-mode");
+const theme = document.querySelector(".theme-link");
+const currentTheme = localStorage.getItem("theme");
+
 //grab recipe id from url
 const countryId = location.hash.substring(1);
 const classList = initializeDetailPage(countryId); //render edit page
@@ -14,17 +18,21 @@ classList.forEach((a) => {
   });
 });
 
+const GoBackWithRefresh = (e) => {
+  if ("referrer" in document) {
+    location.replace(document.referrer);
+  } else {
+    window.history.back();
+  }
+};
+
 backBtnEl.addEventListener("click", (e) => {
-  history.back();
+  GoBackWithRefresh();
 });
 
 window.addEventListener("popstate", (e) => {
   location.reload();
 });
-
-const btn = document.querySelector(".dark-mode");
-const theme = document.querySelector(".theme-link");
-const currentTheme = localStorage.getItem("theme");
 
 if (currentTheme === "dark") {
   theme.href = "/styles/dark-theme.css";

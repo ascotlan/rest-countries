@@ -2,6 +2,10 @@ import { renderCountries } from "./views";
 import { getData } from "./rest-countries";
 import { setFilters } from "./filters.js";
 
+const btn = document.querySelector(".dark-mode");
+const theme = document.querySelector(".theme-link");
+const currentTheme = localStorage.getItem("theme");
+
 getData();
 
 document.querySelector(".country-search").addEventListener("input", (e) => {
@@ -17,10 +21,6 @@ document.querySelector(".country-filter").addEventListener("change", (e) => {
   });
   renderCountries();
 });
-
-const btn = document.querySelector(".dark-mode");
-const theme = document.querySelector(".theme-link");
-const currentTheme = localStorage.getItem("theme");
 
 if (currentTheme === "dark") {
   theme.href = "/styles/dark-theme.css";
