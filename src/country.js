@@ -1,8 +1,8 @@
 import { initializeDetailPage } from "./views.js";
 
-const btn = document.querySelector(".dark-mode");
-const theme = document.querySelector(".theme-link");
-const currentTheme = localStorage.getItem("theme");
+const toggle = document.querySelector(".dark-mode");
+const page = document.querySelector(".page");
+let currentTheme = localStorage.getItem("theme");
 
 //grab recipe id from url
 const countryId = location.hash.substring(1);
@@ -13,21 +13,13 @@ const backBtnEl = document.querySelector(".back");
 classList.forEach((a) => {
   document.querySelector(`.${a}`).addEventListener("click", (e) => {
     const state = { id: e.target.name };
-    history.pushState(state, "", `/country.html#${e.target.name}`);
+    location.assign(`/country.html#${e.target.name}`);
     location.reload();
   });
 });
 
-const GoBackWithRefresh = (e) => {
-  if ("referrer" in document) {
-    location.replace(document.referrer);
-  } else {
-    window.history.back();
-  }
-};
-
 backBtnEl.addEventListener("click", (e) => {
-  GoBackWithRefresh();
+  location.assign("/index.html");
 });
 
 window.addEventListener("popstate", (e) => {
@@ -35,18 +27,25 @@ window.addEventListener("popstate", (e) => {
 });
 
 if (currentTheme === "dark") {
-  theme.href = "/styles/dark-theme.css";
+  page.classList.replace("light", "dark");
 }
 
-btn.addEventListener("click", (e) => {
+toggle.addEventListener("click", (e) => {
+  currentTheme = localStorage.getItem("theme");
   let themeSelection;
-  if (theme.getAttribute("href") === "/styles/styles.css") {
-    theme.href = "/styles/dark-theme.css";
-    themeSelection = "dark";
-  } else {
-    theme.href = "/styles/styles.css";
+  if (currentTheme === "dark") {
+    page.classList.replace("dark", "light");
     themeSelection = "light";
+  } else {
+    page.classList.replace("light", "dark");
+    themeSelection = "dark";
   }
-
   localStorage.setItem("theme", themeSelection);
 });
+
+//how to prevent back/fwd button page load from cache
+window.onpageshow = (e) => {
+  if (e.persisted) {
+    window.location.reload();
+  }
+};
