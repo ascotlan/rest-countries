@@ -4,11 +4,27 @@
   box-sizing: border-box;
 }
 
+.light {
+  --main-bg: hsl(0, 0%, 95%);
+  --element-bg: hsl(0, 0%, 100%);
+  --text-main: hsl(200, 15%, 8%);
+  --input-text: hsl(0, 0%, 52%);
+  --shadow: hsl(0, 0%, 92%);
+}
+
+.dark {
+  --main-bg: hsl(207, 26%, 17%);
+  --element-bg: hsl(209, 23%, 22%);
+  --text-main: hsl(0, 0%, 100%);
+  --input-text: hsl(0, 0%, 100%);
+  --shadow: hsl(209, 23%, 25%);
+}
+
 body {
-  background-color: hsl(0, 0%, 95%);
+  background-color: var(--main-bg);
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
-  color: hsl(200, 15%, 8%);
+  color: var(--text-main);
 }
 
 p {
@@ -31,24 +47,24 @@ p {
 
 input::placeholder {
   font-weight: bold;
-  color: hsl(0, 0%, 52%);
+  color: var(--input-text);
   opacity: 1;
 }
 
 input,
 select,
 textarea {
-  color: hsl(0, 0%, 52%);
+  color: var(--input-text);
 }
 
 .country-search {
   width: 25%;
   height: 50px;
   border-radius: 4px;
-  border: hsl(0, 0%, 95%) solid 3px;
+  border: var(--shadow) solid 3px;
   padding-left: 40px;
   font-weight: bold;
-  background: hsl(0, 0%, 100%)
+  background: var(--element-bg)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
     no-repeat 10px center;
 }
@@ -56,9 +72,9 @@ textarea {
 .country-filter {
   width: 13%;
   border-radius: 4px;
-  border: hsl(0, 0%, 95%) solid 3px;
+  border: var(--shadow) solid 3px;
   padding-left: 20px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--element-bg);
 }
 
 .country-info {
@@ -72,13 +88,15 @@ textarea {
 .country-info-card {
   display: flex;
   flex-direction: column;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--element-bg);
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .flag-image {
   width: 240px;
   height: 145px;
+  border-radius: 4px 4px 0 0;
 }
 
 .country-text {
@@ -106,8 +124,8 @@ textarea {
   grid-column: 1 / -1;
   align-items: center;
   justify-content: space-between;
-  background-color: hsl(0, 0%, 100%);
-  border-bottom: hsl(0, 0%, 95%) solid 3px;
+  background-color: var(--element-bg);
+  border-bottom: var(--shadow) solid 3px;
   padding: 10px 0;
 }
 
@@ -117,7 +135,7 @@ textarea {
 
 .countries-header-link {
   text-decoration: none;
-  color: inherit;
+  color: var(--text-main);
 }
 
 .dark-mode {
@@ -127,7 +145,8 @@ textarea {
   border: none;
   padding: 5px;
   cursor: pointer;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--element-bg);
+  color: var(--text-main);
 }
 
 /* COUNTRY DETAILS PAGE */
@@ -144,9 +163,10 @@ textarea {
   margin-left: 60px;
   padding: 7px 20px;
   border-radius: 4px;
-  border: 2px groove hsl(0, 0%, 95%);
+  border: 2px solid var(--shadow);
   cursor: pointer;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--element-bg);
+  color: var(--text-main);
 }
 
 .country-info-details {
@@ -221,9 +241,10 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  border: 2px groove hsl(0, 0%, 95%);
+  border: 2px solid var(--shadow);
   cursor: pointer;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--element-bg);
+  color: var(--text-main);
 }
 
 .comma:not(:first-child):before {
