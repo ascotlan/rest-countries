@@ -1,7 +1,57 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+medium:500
+semi-bold:600
+bold:700
+
+- Line heights:
+Default: 1
+small: 1.05
+medium: 1.15, 1.2
+paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing:
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+MAIN COLOR: 
+TINTS: 
+SHADES:
+ACCENTS:
+GREY COLOR:
+
+-- 05 SHADOWS
+ box-shadow: 0 1.2rem 2.4rem var(--shadow);
+ box-shadow: 0 2.4rem 3.2rem var(--shadow);
+
+-- 06 BORDER-RADIUS
+Default: 4px
+
+-- 07 WHITESPACE
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%; /* 10px / default(16px) */
 }
 
 .light {
@@ -9,7 +59,8 @@
   --element-bg: hsl(0, 0%, 100%);
   --text-main: hsl(200, 15%, 8%);
   --input-text: hsl(0, 0%, 52%);
-  --shadow: hsl(0, 0%, 92%);
+  --shadow: rgb(17, 21, 23, 0.08);
+  --deeper-shadow: rgb(17, 21, 23, 0.07);
 }
 
 .dark {
@@ -17,31 +68,98 @@
   --element-bg: hsl(209, 23%, 22%);
   --text-main: hsl(0, 0%, 100%);
   --input-text: hsl(0, 0%, 100%);
-  --shadow: hsl(209, 23%, 25%);
+  --shadow: rgba(0, 0, 0, 0.08);
+  --deeper-shadow: rgba(0, 0, 0, 0.07);
 }
 
 body {
   background-color: var(--main-bg);
   font-family: "Nunito Sans", sans-serif;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: var(--text-main);
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 6.4rem;
+}
+
+.grid {
+  display: grid;
+  row-gap: 4.8rem;
+}
+
+.grid--1-cols {
+  grid-template-columns: 1fr;
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 p {
   font-weight: 800;
 }
 
-.container {
-  display: flex;
-  width: 1440px;
-  margin: 0 auto;
-  flex-direction: column;
-  gap: 50px;
+.spacing {
+  margin-bottom: 0.8rem;
 }
+
+.comma:not(:first-child):before {
+  content: ", ";
+}
+
+.no-bold {
+  font-weight: 600;
+}
+
+/******************************/
+/* HEADER */
+/******************************/
+.header {
+  background-color: var(--element-bg);
+  box-shadow: 0 1.2rem 2.4rem var(--shadow);
+  padding: 1.6rem 0;
+}
+
+.countries-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.countries-header-link {
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.dark-mode {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--element-bg);
+  color: var(--text-main);
+  padding: 1.2rem;
+
+  transition: all 0.4s;
+}
+
+.dark-mode:hover {
+  background-color: var(--text-main);
+  color: var(--main-bg);
+}
+
+/******************************/
+/* FILTER SECTION*/
+/******************************/
 
 .country-filters {
   display: flex;
-  padding: 0 60px;
+  padding: 4.8rem 0 0;
   justify-content: space-between;
 }
 
@@ -58,31 +176,33 @@ textarea {
 }
 
 .country-search {
-  width: 25%;
-  height: 50px;
+  width: 32rem;
+  height: 4.8rem;
   border-radius: 4px;
-  border: var(--shadow) solid 3px;
-  padding-left: 40px;
-  font-weight: bold;
+  border: 3px solid var(--shadow);
+  box-shadow: 0 1.2rem 2.4rem var(--shadow);
+  padding-left: 4.8rem;
+  font-weight: 800;
   background: var(--element-bg)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
     no-repeat 10px center;
 }
 
 .country-filter {
-  width: 13%;
+  width: 18rem;
   border-radius: 4px;
-  border: var(--shadow) solid 3px;
-  padding-left: 20px;
+  border: 3px solid var(--shadow);
+  box-shadow: 0 1.2rem 2.4rem var(--shadow);
+  padding: 0 2.4rem;
   background-color: var(--element-bg);
 }
 
+/******************************/
+/* COUNTRY INFO SECTION */
+/******************************/
 .country-info {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  justify-items: center;
-  row-gap: 50px;
+  column-gap: 6.4rem;
+  row-gap: 6.4rem;
 }
 
 .country-info-card {
@@ -91,26 +211,28 @@ textarea {
   background-color: var(--element-bg);
   cursor: pointer;
   border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1.2rem 2.4rem var(--shadow);
+  transition: all 0.4s;
+}
+
+.country-info-card:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 2.4rem 3.2rem var(--deeper-shadow);
 }
 
 .flag-image {
-  width: 240px;
-  height: 145px;
-  border-radius: 4px 4px 0 0;
+  width: 100%;
+  height: 16.8rem;
 }
 
 .country-text {
-  flex: 1;
-  max-width: 240px;
-  padding: 20px 20px 30px;
+  max-width: 24rem;
+  padding: 2.4rem 2.4rem 3.2rem;
 }
 
 .country-name {
   margin-bottom: 15px;
-}
-
-.spacing {
-  margin-bottom: 5px;
 }
 
 .long-text-truncate {
@@ -119,37 +241,10 @@ textarea {
   text-overflow: ellipsis;
 }
 
-.header {
-  display: flex;
-  grid-column: 1 / -1;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--element-bg);
-  border-bottom: var(--shadow) solid 3px;
-  padding: 10px 0;
-}
-
-.countries-header {
-  margin-left: 60px;
-}
-
-.countries-header-link {
-  text-decoration: none;
-  color: var(--text-main);
-}
-
-.dark-mode {
-  margin-right: 60px;
-  font-weight: 600;
-  border-radius: 4px;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-  background-color: var(--element-bg);
-  color: var(--text-main);
-}
-
+/******************************/
 /* COUNTRY DETAILS PAGE */
+/******************************/
+
 .container-country-details {
   display: flex;
   flex-direction: column;
@@ -245,12 +340,4 @@ textarea {
   cursor: pointer;
   background-color: var(--element-bg);
   color: var(--text-main);
-}
-
-.comma:not(:first-child):before {
-  content: ", ";
-}
-
-.no-bold {
-  font-weight: normal;
 }

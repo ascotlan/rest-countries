@@ -19,6 +19,7 @@ const generateCountryDOM = (country) => {
 
   flagEl.setAttribute("src", country.flags.png);
   flagEl.classList.add("flag-image");
+  flagEl.setAttribute("alt", `National flag of ${country.name.common}`);
   nameEl.textContent = country.name.common;
   nameEl.classList.add("country-name", "long-text-truncate");
 
