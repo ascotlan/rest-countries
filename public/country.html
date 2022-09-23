@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Rest countries provides access to flag and country details for every country in the world.">
     <link rel="stylesheet" href="/styles/styles.css"/>
+    <link rel="stylesheet" href="/styles/queries.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,34 +18,42 @@
   </head>
 
   <body class="page light">
-    <div class="container-country-details">
-      <div class="header">
-        <h1 class="countries-header"><a class="countries-header-link" href="/index.html">Where in the world?</a></h1>
-        <button type="button" class="dark-mode"><i class="fa fa-moon-o"></i> Dark Mode</button>
+    <div class="header">
+      <div class="container countries-header">
+        <h1>
+          <a class="countries-header-link" href="/index.html"
+            >Where in the world?</a
+          >
+        </h1>
+        <button type="button" class="dark-mode">
+          <i class="fa fa-moon-o"></i> Dark Mode
+        </button>
       </div>
-    <button type="button" class="back">&#8592;  Back</button>
-    <div class="country-info-details">
-      <img class="large-flag"></img>
-      <div class="country-text-detail">
-        <h2 class="row1-col1"></h2>
-        <div class="row2-col1">
-          <p class = "native-name">Native Name: <span class="value1"></span></p>
-          <p class = "country-details-pop">Population: <span class="value2"></span></p>
-          <p class = "country-details-region">Region: <span class="value3"></span></p>
-          <p class = "country-details-sub">Sub Region: <span class="value4"></span></p>
-          <p class = "country-details-cap">Capital: <span class="value5"></span></p>
-        </div>
-        <div class="row2-col2">
-          <p class = "domain">Top Level Domain: <span class="value6"></span></p>
-          <p class = "currency">Currencies: <span class="value7"></span></p>
-          <p class = "language">Languages: <span class="value8"></span></p>
-        </div>
-        <div class="row3-col12">
-          <p class = "border">Border Countries: <span class="value9"></span></p>
+    </div>
+    <div class="container grid grid--1-cols">
+      <button type="button" class="back">&#8592;  Back</button>
+      <div class="grid grid--2-cols country-info-details spacing2">
+        <img class="large-flag"></img>
+        <div class="country-text-detail grid grid--2-cols">
+          <h2 class="row1-col1"></h2>
+          <div class="row2-col1">
+            <p class = "native-name">Native Name: <span class="value1"></span></p>
+            <p class = "country-details-pop">Population: <span class="value2"></span></p>
+            <p class = "country-details-region">Region: <span class="value3"></span></p>
+            <p class = "country-details-sub">Sub Region: <span class="value4"></span></p>
+            <p class = "country-details-cap">Capital: <span class="value5"></span></p>
+          </div>
+          <div class="row2-col2">
+            <p class = "domain">Top Level Domain: <span class="value6"></span></p>
+            <p class = "currency">Currencies: <span class="value7"></span></p>
+            <p class = "language">Languages: <span class="value8"></span></p>
+          </div>
+          <div class="row3-col12">
+            <p class="border">Border Countries:</p> <span class="value9 grid grid--3-cols"></span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <script src="/scripts/country-bundle.js" type="text/javascript"></script>
   </body>
 </html>

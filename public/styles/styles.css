@@ -5,21 +5,19 @@ FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
 - Font weights
-Default: 400
-medium:500
-semi-bold:600
-bold:700
+Default: 600
+light: 300
+bold:800
 
 - Line heights:
-Default: 1
-small: 1.05
-medium: 1.15, 1.2
+Default: 
+small: 
+medium: 
 paragraph default: 1.6
-Large: 1.8
+Large:
 
 - Letter spacing:
--0.5px
-0.75px
+
 
 --- 02 COLORS
 
@@ -94,6 +92,14 @@ body {
   grid-template-columns: 1fr;
 }
 
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -104,6 +110,10 @@ p {
 
 .spacing {
   margin-bottom: 0.8rem;
+}
+
+.spacing2 {
+  margin-bottom: 8rem;
 }
 
 .comma:not(:first-child):before {
@@ -135,7 +145,9 @@ p {
 }
 
 .dark-mode {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 1.4rem;
   font-weight: 600;
   border: none;
@@ -158,9 +170,7 @@ p {
 /******************************/
 
 .country-filters {
-  display: flex;
   padding: 4.8rem 0 0;
-  justify-content: space-between;
 }
 
 input::placeholder {
@@ -176,10 +186,10 @@ textarea {
 }
 
 .country-search {
-  width: 32rem;
+  max-width: 32rem;
   height: 4.8rem;
   border-radius: 4px;
-  border: 3px solid var(--shadow);
+  border: none;
   box-shadow: 0 1.2rem 2.4rem var(--shadow);
   padding-left: 4.8rem;
   font-weight: 800;
@@ -190,11 +200,13 @@ textarea {
 
 .country-filter {
   width: 18rem;
+  height: 4.8rem;
   border-radius: 4px;
-  border: 3px solid var(--shadow);
+  border: none;
   box-shadow: 0 1.2rem 2.4rem var(--shadow);
   padding: 0 2.4rem;
   background-color: var(--element-bg);
+  justify-self: end;
 }
 
 /******************************/
@@ -206,8 +218,8 @@ textarea {
 }
 
 .country-info-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: var(--element-bg);
   cursor: pointer;
   border-radius: 4px;
@@ -245,50 +257,42 @@ textarea {
 /* COUNTRY DETAILS PAGE */
 /******************************/
 
-.container-country-details {
-  display: flex;
-  flex-direction: column;
-  width: 1440px;
-  margin: 0 auto;
-  gap: 75px;
-}
-
 .back {
-  align-self: flex-start;
-  margin-left: 60px;
-  padding: 7px 20px;
+  justify-self: start;
+  display: inline-block;
+  padding: 0.8rem 2.4rem;
+  margin-top: 4.8rem;
   border-radius: 4px;
-  border: 2px solid var(--shadow);
+  border: none;
   cursor: pointer;
   background-color: var(--element-bg);
   color: var(--text-main);
+  box-shadow: 0 1.2rem 2.4rem var(--shadow);
+  transition: all 0.4s;
+}
+
+.back:hover {
+  background-color: var(--text-main);
+  color: var(--main-bg);
 }
 
 .country-info-details {
-  display: flex;
   align-items: center;
-  font-size: 16px;
-  justify-content: space-between;
-  gap: 100px;
-  padding: 0 60px;
+  justify-content: center;
+  font-size: 1.6rem;
+  column-gap: 6.4rem;
 }
 
 .large-flag {
-  height: 350px;
-  width: 500px;
+  width: 100%;
 }
 
 .country-text-detail {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, auto);
-  align-items: center;
-  row-gap: 30px;
-  column-gap: 100px;
+  column-gap: 9.6rem;
 }
 
 .row1-col1 {
-  grid-column: 1 / 1;
+  grid-column: 1 / -1;
 }
 
 .row2-col1 {
@@ -298,7 +302,7 @@ textarea {
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1.2rem;
 }
 
 .row2-col2 {
@@ -309,35 +313,43 @@ textarea {
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1.2rem;
 }
 
 .row3-col12 {
   grid-column: 1 / -1;
   grid-row: 3;
-  padding-top: 20px;
-}
 
-.border {
   display: flex;
-  gap: 15px;
+  gap: 1.6rem;
 }
 
 .value9 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 15px;
-  row-gap: 15px;
+  column-gap: 1.6rem;
+  row-gap: 1.6rem;
+}
+
+.border {
+  white-space: nowrap;
 }
 
 .border-country {
   display: flex;
-  padding: 5px 15px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
   align-items: center;
+  white-space: nowrap;
   justify-content: center;
   border-radius: 4px;
-  border: 2px solid var(--shadow);
+  border: none;
+  box-shadow: 0 1.2rem 2.4rem var(--shadow);
   cursor: pointer;
   background-color: var(--element-bg);
   color: var(--text-main);
+  transition: all 0.4s;
+}
+
+.border-country:hover {
+  background-color: var(--text-main);
+  color: var(--main-bg);
 }
