@@ -206,6 +206,7 @@ textarea {
   box-shadow: 0 1.2rem 2.4rem var(--shadow);
   padding: 0 2.4rem;
   background-color: var(--element-bg);
+  cursor: pointer;
   justify-self: end;
 }
 
