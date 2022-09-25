@@ -14,7 +14,6 @@ classList.forEach((a) => {
   document.querySelector(`.${a}`).addEventListener("click", (e) => {
     const state = { id: e.target.name };
     location.assign(`/country.html#${e.target.name}`);
-    location.reload();
   });
 });
 
