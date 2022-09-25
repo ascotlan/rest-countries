@@ -1,12 +1,13 @@
-import { renderCountries } from "./views";
-import { getData } from "./rest-countries";
+import { renderCountries, initializeDetailPage } from "./views";
 import { setFilters } from "./filters.js";
+import { getData, getCountryData } from "./rest-countries";
+
+if (getCountryData().length > 0) renderCountries();
+getData();
 
 const toggle = document.querySelector(".dark-mode");
 const page = document.querySelector(".page");
 let currentTheme = localStorage.getItem("theme");
-
-getData();
 
 document.querySelector(".country-search").addEventListener("input", (e) => {
   setFilters({
