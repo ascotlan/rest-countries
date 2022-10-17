@@ -162,7 +162,15 @@ p {
 
 .dark-mode:hover {
   background-color: var(--text-main);
+}
+
+.dark-mode:hover,
+.dark-mode:hover .moon-icon {
   color: var(--main-bg);
+}
+
+.moon-icon {
+  color: var(--text-main);
 }
 
 /******************************/
