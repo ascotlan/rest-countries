@@ -208,6 +208,7 @@ textarea {
   box-shadow: 0 1.2rem 2.4rem var(--shadow);
   padding: 1rem 1rem 1rem 4.8rem;
   font-weight: 800;
+  background-color: var(--element-bg);
 }
 
 .country-filter {
