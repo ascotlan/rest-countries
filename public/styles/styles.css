@@ -240,7 +240,7 @@ textarea {
 }
 
 .country-text {
-  max-width: 24rem;
+  width: 24rem;
   padding: 2.4rem 2.4rem 3.2rem;
 }
 
