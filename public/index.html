@@ -22,10 +22,14 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <title>Where in the world</title>
 
     <style>
@@ -54,11 +58,14 @@
     </header>
     <main class="container grid grid--1-cols">
       <section class="country-filters grid grid--2-cols">
-        <input
-          type="search"
-          class="country-search"
-          placeholder="Search for a country..."
-        />
+        <div class="search">
+          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+          <input
+            type="search"
+            class="country-search"
+            placeholder="Search for a country..."
+          />
+        </div>
         <select class="country-filter">
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
