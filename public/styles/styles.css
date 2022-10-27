@@ -170,6 +170,8 @@ p {
 }
 
 .moon-icon {
+  height: 14px;
+  width: 14px;
   color: var(--text-main);
 }
 
@@ -193,7 +195,7 @@ textarea {
   color: var(--input-text);
 }
 
-.search ion-icon {
+.search .search-icon {
   position: absolute;
 }
 
@@ -202,9 +204,9 @@ textarea {
 }
 
 .search-icon {
-  height: 2.4rem;
-  width: 2.4rem;
-  padding: 1rem;
+  height: 4.8rem;
+  width: 4.8rem;
+  padding: 1.2rem;
   color: var(--input-text);
 }
 

@@ -22,14 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
       rel="stylesheet"
     />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+
     <title>Where in the world</title>
 
     <style>
@@ -52,14 +45,50 @@
           >
         </h1>
         <button type="button" class="dark-mode">
-          <ion-icon name="moon-outline" class="moon-icon"></ion-icon> Dark Mode
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon moon-icon"
+            viewBox="0 0 512 512"
+          >
+            <title>Moon</title>
+            <path
+              d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+            />
+          </svg>
+          Dark Mode
         </button>
       </div>
     </header>
     <main class="container grid grid--1-cols">
       <section class="country-filters grid grid--2-cols">
         <div class="search">
-          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon search-icon"
+            viewBox="0 0 512 512"
+          >
+            <title>Search</title>
+            <path
+              d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+              fill="none"
+              stroke="currentColor"
+              stroke-miterlimit="10"
+              stroke-width="32"
+            />
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="32"
+              d="M338.29 338.29L448 448"
+            />
+          </svg>
           <input
             type="search"
             class="country-search"
