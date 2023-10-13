@@ -1,7 +1,7 @@
 # Rest Countries
 [See live website](https://antonio-rest-countries.netlify.app/)
 
-Rest countries is a responsive application utilizes the REST countries API so tha the user can:
+Rest countries is a responsive application that utilizes the REST countries API so tha the user can:
 - See all countries from the API on the homepage
 - Search for a country using an input field
 - Filter countries by region
